@@ -1,6 +1,6 @@
 # How to start Django
 
-- first dont use Vscode's terminal. Always use pc's CMD or mac's terminal
+- first dont use Vscode's terminal. Always use pc's CMD or mac's terminal although macs vscode have acces to zsh terminal wich is fine.
 
 - Next navegate to the folder where you want create your app, so all the app files including env files will be there.
 
@@ -206,3 +206,13 @@ INSTALLED_APPS = [
 ]
 ```
 
+## create model 
+
+- after models are created then use the command "python manage.py makemigrations" and "python manage.py migrate"
+
+
+## create super user (admin)
+
+```shell
+python manage.py createsuperuser
+```
