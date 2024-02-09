@@ -180,9 +180,29 @@ from dotenv import load_dotenv
 load_dotenv()
 ```
 
--change the secret key and debug to read from .env:
+- change the secret key and debug to read from .env:
 
 ```python
 SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG")
 ```
+
+
+## APPs declarations:
+
+- all apps created with the command ">python manage.py startapp [app_name]" need to be declared in the settings.py for example "account", "chat_server" and "VictorGrinan"
+
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'account',
+    'chat_server',
+    'VictorGrinan'
+]
+```
+
