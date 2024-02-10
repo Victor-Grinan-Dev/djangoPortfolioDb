@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # external:
+    'rest_framework',
+
+    # internal:
     'account',
     'chat_server',
     'VictorGrinan'

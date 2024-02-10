@@ -216,3 +216,5 @@ INSTALLED_APPS = [
 ```shell
 python manage.py createsuperuser
 ```
+
+rest framework : https://www.django-rest-framework.org/#installation
