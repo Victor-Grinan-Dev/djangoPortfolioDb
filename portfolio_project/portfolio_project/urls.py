@@ -16,21 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
+from rest_framework.routers import DefaultRouter
 from chat_server.views import ServerListViewSet
 
-router = routers.DefaultRouter
-router.register("api/server/select")
+router = DefaultRouter()
+router.register("api/server/select/", ServerListViewSet)
+# router.register('data', ServerListViewSet)
+# router.register(prefix='api', viewset='api/server/select', basename='category')
  
 urlpatterns = [
-
+    #in-build
     path('admin/', admin.site.urls),
-
-    #portfolio
+ 
+    #portfolio VictorGrinan
     path('', include('VictorGrinan.urls')),
 
     #chat
-    path('', include('VictorGrinan.urls')),
-
-
-]
+] + router.urls
