@@ -11,7 +11,7 @@ class ServerListViewSet(viewsets.ViewSet):
     queryset = Server.objects.all()
 
     def list(self, request):
-        category = request.query_params.get("category").lower()
+        category = request.query_params.get("category")
         qty = request.query_params.get("qty")
         by_user = request.query_params.get("by_user") == 'true' 
         by_member_id = request.query_params.get("by_member_id") 
