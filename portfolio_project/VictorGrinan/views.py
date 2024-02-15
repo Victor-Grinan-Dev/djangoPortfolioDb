@@ -7,4 +7,4 @@ def home(req):
     context['number1'] = 123456
     context['list1'] = [1,2,3,4,5,6]
 
-    return render(req, "index.html", context)
+    return render(req, "layout.html", context)

@@ -19,6 +19,9 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from chat_server.views import ServerListViewSet
 
+# from VictorGrinan.views import (
+#     home,
+# )
 router = DefaultRouter()
 router.register("api/server/select/", ServerListViewSet)
 # router.register('data', ServerListViewSet)
@@ -27,9 +30,10 @@ router.register("api/server/select/", ServerListViewSet)
 urlpatterns = [
     #in-build
     path('admin/', admin.site.urls),
+    # path('home/', home),
  
     #portfolio VictorGrinan
     path('', include('VictorGrinan.urls')),
 
-    #chat
+    #chat 
 ] + router.urls

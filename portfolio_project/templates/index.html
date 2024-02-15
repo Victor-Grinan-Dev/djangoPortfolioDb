@@ -1,19 +1,131 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!--Google Material Symbols-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <title>Victor Griñán's Portfolio</title>
 </head>
+
 <body>
-    <h1>Hello</h1>
-    <h2>{{text1}}</h2>
-    <h2>{{number1}}</h2>
-    {% for item in list1 %}
-    <h2> {{item}}</h2>
-    {% endfor %}
+    <nav class="navbar navbar-expand-lg bg-light" id="menuBar">
+
+        <div class="container-fluid flex-corners">
+
+            <div id="logo">
+                <a href="#heroBanner">
+                    <h1 id="v"> V </h1>
+                </a>
+                <a href="#heroBanner">
+                    <h1 id="g"> G </h1>
+                </a>
+                {# <img src="{% static 'icons/logo_2.png' %}" alt="logo"> #}
+                {# <img src="./icons/logo_2.png" alt="logo"> #}
+            </div>
+
+            <!-- hamburger menu: -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- menu bar: -->
+            <div class="collapse navbar-collapse nav-tab" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item" id="aboutTab">
+                        <a class="nav-link" aria-current="page" href="#aboutArticle">About</a>
+                        <div class="indicator" id="aboutTabIndicator"></div>
+                    </li>
+                    <li class="nav-item" id="portfolioTab">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <div class="indicator" id="portfolioTabIndicator"></div>
+                    </li>
+                    <li class="nav-item" id="skillsTab">
+                        <a class="nav-link" href="#skillsBoxes">Skills</a>
+                        <div class="indicator" id="skillsTabIndicator"></div>
+                    </li>
+                    <li class="nav-item" id="certTab">
+                        <a class="nav-link" href="#certificates">Certificates</a>
+                        <div class="indicator" id="certTabIndicator"></div>
+                    </li>
+                    <li class="nav-item" id="contactTab">
+                        <a class="nav-link" href="#contact">Conctact Me</a>
+                        <div class="indicator" id="contactTabIndicator"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://en.bc.fi/qualifications/full-stack-web-developer-program/"
+                            target="blank">HBC</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <footer id='footer' class="footer bgLevel5">
+
+        <h4 id='contact' class="section-title">Conctact me:</h4>
+
+        <div class="email">
+
+            <a href="https://mail.google.com/mail/u/0/#inbox" target="blank">
+                {# <img src="icons/email_color.png" alt="email" id="emailImg" class="icon"> #}
+            </a>
+
+            <a href="https://mail.google.com/mail/u/0/#inbox" target="blank">
+                <p id="emailActual"> victorgrinan@gmail.com </p>
+            </a>
+        </div>
+
+        <div id="some">
+            <a href="https://gitlab.com/VictorGrinan" target="blank">
+                {# <img src="./icons/gitLab.png" alt="gitlab" class="some"> #}
+            </a>
+            <a href="https://github.com/Victor-Grinan-Dev" target="blank">
+                {# <img src="./icons/github_circle_white_border.png" alt="github" class="some"> #}
+            </a>
+
+            <a href="https://www.linkedin.com/in/victor-gri%C3%B1an-892a741b7/" target="blank">
+                {# <img src="./icons/Linkedin-logo-transparent-PNG.png" alt="Linked-in" class="some"> #}
+            </a>
+
+            <a href="https://www.instagram.com/victor_grinan_dev/" target="blank">
+                {# <img src="./icons/instagram_color.png" alt="Instagram" class="some"> #}
+            </a>
+
+            <a href="https://twitter.com/GrinanVictor" target="blank">
+                {# <img src="./icons/Twitter-X.png" alt="Twitter" class="some"> #}
+            </a>
+            <a href='https://www.youtube.com/channel/UC2iIcn27_m4nI-DSEaM2FOQ' target="blank">
+                {# <img src="./icons/youtube.png" alt="youtube" class="some"> #}
+            </a>
+        </div>
+
+        <p>This page <a href="https://github.com/Victor-Grinan-Dev/Portfolio">source code</a> is accesible from my
+            Github account.</p>
+        <section id="licenseSection">
+            <p id="copyRight" class="copyRight">Copyrights &copy; <span class="year"></span></p><!-- ;  -->
+            <p id="love">Made with ❤️ from Finland</p>
+        </section>
+
+        <button id="scrollUp appButton" class="scrollUp invisible"><span class="material-symbols-outlined">
+                arrow_upward
+            </span></button>
+
+    </footer>
     <script src="{% static '/js/script.js' %}"></script>
+    <script src="{% static '/js/main.js' %}"></script>
 </body>
+
 </html>
