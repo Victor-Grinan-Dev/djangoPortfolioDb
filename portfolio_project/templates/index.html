@@ -4,11 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'icons/meLogoInvert.png' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Victor Griñán's Portfolio</title>
 </head>
 <body>
     <h1>Hello</h1>
+    <h2>{{text1}}</h2>
+    <h2>{{number1}}</h2>
+    {% for item in list1 %}
+    <h2> {{item}}</h2>
+    {% endfor %}
     <script src="{% static '/js/script.js' %}"></script>
 </body>
 </html>
