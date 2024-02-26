@@ -224,3 +224,10 @@ rest framework : https://www.django-rest-framework.org/#installation
 ```shell
 pip freeze > requirements.txt
 ```
+
+## for every field you create inside a model you need to do the data migration with the following commands in the terminal
+
+```shell
+python manage.py makemigrations
+python manage.py migrate
+```
