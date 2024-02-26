@@ -24,11 +24,12 @@ class Category(models.Model):
 
     @receiver(models.signals.pre_delete, sender="chat_server.Category")
     def category_delete_files(sender, instance, **kwargs):
+        """if the category gets deleted will also the icon"""
         for field in instance._meta.fields:
             if field.name == "icon":
                 file = getattr(instance, field.name)
                 if file:
-                    file.delete(save=False)
+                    file.delete(save=False) 
 
     def __str__(self):
         return self.name

@@ -218,3 +218,9 @@ python manage.py createsuperuser
 ```
 
 rest framework : https://www.django-rest-framework.org/#installation
+
+## create the requirements.txt:
+- make sure you are in the root folder of your project
+```shell
+pip freeze > requirements.txt
+```
