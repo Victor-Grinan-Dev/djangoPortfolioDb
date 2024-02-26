@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.dispatch import receiver
 from django.shortcuts import get_object_or_404
+from .validations import validate_icon_image_size, validate_image_file_extensions
 
 def server_icon_upload(instance, filename):
     return f"server/{instance.id}/server_icon/{filename}"
@@ -18,7 +19,11 @@ class Category(models.Model):
     icon = models.FileField(
         upload_to=category_icon_upload, 
         null=True, 
-        blank=True)
+        blank=True,
+        # validators=[
+        #     validate_icon_image_size
+        #     ]
+        )
     
     def save(self, *args, **kwargs):
         """keep only one icon per category"""
@@ -57,9 +62,24 @@ class Channel(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="channel_owner")
     topic = models.CharField(max_length = 255)
     server = models.ForeignKey(Server, on_delete=models.CASCADE, related_name="channel_server")
-    banner = models.ImageField(upload_to=server_banner_upload, null=True, blank=True)
-    icon = models.ImageField(upload_to=server_icon_upload, null=True, blank=True)
 
+    banner = models.ImageField(
+        upload_to=server_banner_upload, 
+        null=True, 
+        blank=True, 
+        validators=[
+            validate_image_file_extensions
+            ]
+        )
+    icon = models.ImageField(
+        upload_to=server_icon_upload, 
+        null=True, 
+        blank=True, 
+        validators=[
+            validate_icon_image_size, 
+            validate_image_file_extensions
+            ]
+        )
 
     def save(self, *args, **kwargs):
         """keep only one icon per channel"""
