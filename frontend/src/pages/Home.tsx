@@ -1,8 +1,18 @@
+import {Box, CssBaseline} from '@mui/material';
+import PrimaryAppBar from './templates/PrimaryAppBar';
 
+const style = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems:"center",
+}
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <Box component="section" sx={style}>
+      <CssBaseline />
+      <PrimaryAppBar />  
+    </Box>
   )
 }
 

@@ -1,0 +1,11 @@
+a{
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+}
+Button:hover,
+a:hover{
+    color:rgb(9, 9, 9);
+    text-shadow: 0 0 2px white;
+    cursor: pointer;
+}
